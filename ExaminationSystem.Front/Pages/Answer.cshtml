@@ -1,0 +1,50 @@
+﻿@page
+@model ExaminationSystem.Front.Pages.AnswerModel
+@{
+    ViewData["Title"] = "Answer For Questions";
+}
+<div class="text-center">
+    <h1 class="display-4">Model.QuizDetails.Name</h1>
+    <form method="post">
+        <table class="table table-striped border">
+            @foreach (var Question in Model.QuizDetails.Questions)
+            {
+                <tr>
+                    <td>
+                        @Question.Text
+                    </td>
+                    <td>
+
+                    </td>
+
+
+                </tr>
+                @if(Question.Type == 1)
+                {
+                    @foreach (var Choise in Question.Choises)
+                    {
+                        <tr>
+                            <th>
+                                @Choise.Text
+                            </th>
+                            <th>
+                                <input type="checkbox" />
+                            </th>
+                            
+
+                        </tr>
+                    }
+                }
+                else if (Question.Type == 0)
+                {
+                    <tr>
+                        <th>
+                            <input  type="text"/>
+                        </th>
+                    </tr>
+                }
+
+            }
+        </table>
+    </form>
+</div>
