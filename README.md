@@ -1,1 +1,1 @@
-# ExaminationSystem.Front
+Project For Student (Razor Pages)
